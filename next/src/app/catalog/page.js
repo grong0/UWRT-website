@@ -45,7 +45,7 @@ function Catalog() {
 						if (count > 100) {
 							throw BreakException;
 						}
-						if (count <= 500 && item.at(19) != "name") {
+						if (item.at(19) != "name") {
 							newItems.push({
 								name: item.at(19),
 								price: item.at(20),
