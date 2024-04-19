@@ -26,7 +26,7 @@
 		<title>Catalog</title>
 	</head>
 	<body class="bg-base-200 min-h-screen">
-		<div class="navbar bg-base-100">
+		<div class="navbar bg-base-100 absolute top-0">
 			<div class="flex-1">
 				<a class="btn btn-ghost text-xl" href="./index.html">E-Store</a>
 				<a class="btn btn-ghost text-l" href="./catalog.html">Catalog</a>
@@ -43,252 +43,45 @@
 				</button>
 			</div>
 		</div>
-		<div class="flex flex-col w-full p-10">
+
+		<div class="flex flex-col w-full p-10 mt-16">
 			<div class="flex flex-row w-full gap-10">
 				<h1 class="text-5xl font-bold mb-10">Catalog</h1>
 				<div class="flex flex-row gap-2">
 					<input type="text" placeholder="Search" class="input input-bordered w-full" />
-					<div class="dropdown dropdown-bottom dropdown-end">
-						<div class="dropdown dropdown-end">
-							<div tabindex="0" role="button" class="btn btn-outline m-0">Tags</div>
-							<ul
-								tabindex="0"
-								class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-2"
-							>
-								<li><a>Tag</a></li>
-								<li><a>Tag</a></li>
-								<li><a>Tag</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="dropdown dropdown-bottom dropdown-end">
-						<div class="dropdown dropdown-end">
-							<div tabindex="0" role="button" class="btn btn-outline m-0">Sort</div>
-							<ul
-								tabindex="0"
-								class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-2"
-							>
-								<li><a>High to Low</a></li>
-								<li><a>Low to High</a></li>
-							</ul>
-						</div>
-					</div>
+					<select class="select select-bordered w-full max-w-xs">
+						<option selected>All</option>
+					</select>
+					<select class="select select-bordered w-full max-w-xs">
+						<option selected>None</option>
+						<option value="htl">High to Low</option>
+						<option value="lth">Low to High</option>
+					</select>
 				</div>
 			</div>
 
-			<div class="w-full">
-				<div class="grid grid-cols-4 gap-10 col-start-2 col-end-5 min-h-screen">
+			<div class="w-full min-h-screen">
+				<div class="grid grid-cols-5 gap-10">
 					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
+						<figure class="w-full aspect-square relative">
+							<img
+								src="https://placehold.co/500x500"
+								alt="Shoes"
+								class="w-full h-full"
+							/>
+							<div
+								class="w-min h-min absolute right-2 bottom-2 rounded-xl bg-base-200 p-4 shadow-xl"
+							>
+								<h2 class="font-bold text-primary text-xl">$12.99</h2>
+							</div>
+						</figure>
 						<div class="card-body">
 							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
+							<div class="w-full flex flex-row gap-2 mb-5 flex-wrap h-auto">
+								<div class="badge badge-accent select-none font-bold">Tag</div>
+								<div class="badge badge-accent select-none font-bold">Tag</div>
 							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
-								<button class="btn mr-auto">Add to Cart</button>
-								<button class="btn btn-primary">Buy Now</button>
-							</div>
-						</div>
-					</div>
-					<div class="card w-full bg-base-100 shadow-xl">
-						<figure><img src="https://placehold.co/600x400" alt="Shoes" /></figure>
-						<div class="card-body">
-							<h2 class="card-title">Lorem Ipsum</h2>
-							<div class="w-full">
-								<div class="badge badge-accent">Tag</div>
-								<div class="badge badge-accent">Tag</div>
-							</div>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-								consectetur rem tempora.
-							</p>
-							<div class="card-actions justify-end">
+							<div class="card-actions justify-end mt-auto">
 								<button class="btn mr-auto">Add to Cart</button>
 								<button class="btn btn-primary">Buy Now</button>
 							</div>
@@ -297,6 +90,7 @@
 				</div>
 			</div>
 		</div>
+
 		<footer class="footer p-10 bg-neutral text-neutral-content">
 			<nav>
 				<header class="footer-title">Services</header>

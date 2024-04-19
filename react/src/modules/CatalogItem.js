@@ -1,11 +1,9 @@
-import { useEffect } from "react";
-
 function CatalogItem(props) {
 	return (
 		<div className="card w-full bg-base-100 shadow-xl">
 			<figure className="w-full aspect-square relative">
 				<img src={props.imageURL} alt={props.imageALT} className="w-full h-full" />
-				<div className="w-min h-min absolute right-2 bottom-2 rounded-xl bg-base-100 p-4 shadow-lg border-base-300 border-4 box-border">
+				<div className="w-min h-min absolute right-2 bottom-2 rounded-xl bg-base-200 p-4 shadow-xl">
 					<h2 className="font-bold text-primary text-xl">
 						${parseFloat(props.price).toFixed(2)}
 					</h2>

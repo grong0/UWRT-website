@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Papa from "papaparse";
 import CatalogItem from "./CatalogItem";
 
@@ -129,7 +129,7 @@ function Catalog() {
 			</div>
 
 			<div className="w-full min-h-screen">
-				<div className="grid grid-cols-5 gap-10 min-h">
+				<div className="grid grid-cols-5 gap-10">
 					{items.map((item, index) => (
 						<CatalogItem
 							name={item.name ? item.name : "Not Found"}

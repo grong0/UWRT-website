@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart, faGamepad, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
 	return (

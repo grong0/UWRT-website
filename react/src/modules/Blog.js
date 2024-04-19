@@ -3,31 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
-const placeholderContent =
-	"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis libero maiores consequatur debitis quae possimus nobis veritatis porro sequi fuga laborum excepturi minima repudiandae laudantium iste veniam, et vel rem.";
-
-function BlogBlock(props) {
-	return (
-		<div className="card card-side w-full bg-base-100 shadow-xl grid grid-cols-8">
-			{/* <figure className="py-5 pl-5 col-start-1">
-				<img src={props.imageURL} alt={props.imageALT} className="rounded-lg" />
-			</figure> */}
-			<div className="card-body col-start-1 col-end-8">
-				<h2 className="card-title text-xl">{props.title}</h2>
-				<h3 className="text-l">{props.description}</h3>
-			</div>
-			<figure className="py-5 pr-5 col-start-8">
-				<Link
-					className="btn btn-square w-full h-auto text-xl aspect-square"
-					to={`/blogpost${props.sourcePath}`}
-				>
-					<FontAwesomeIcon icon={faArrowRight} />
-				</Link>
-			</figure>
-		</div>
-	);
-}
-
 const blogs = [
 	{
 		title: "Blog Template 1",
@@ -45,6 +20,25 @@ const blogs = [
 		sourcePath: "/templateBlog3.md",
 	},
 ];
+
+function BlogBlock(props) {
+	return (
+		<div className="card card-side w-full bg-base-100 shadow-xl grid grid-cols-8">
+			<div className="card-body col-start-1 col-end-8">
+				<h2 className="card-title text-xl">{props.title}</h2>
+				<h3 className="text-l">{props.description}</h3>
+			</div>
+			<figure className="py-5 pr-5 col-start-8">
+				<Link
+					className="btn btn-square w-full h-auto text-xl aspect-square"
+					to={`/blogpost${props.sourcePath}`}
+				>
+					<FontAwesomeIcon icon={faArrowRight} />
+				</Link>
+			</figure>
+		</div>
+	);
+}
 
 function Blog() {
 	const [listedBlogs, setListedBlogs] = useState([]);

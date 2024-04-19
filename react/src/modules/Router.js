@@ -1,39 +1,10 @@
-import {
-	createBrowserRouter,
-	BrowserRouter,
-	Routes as ReactRoutes,
-	Route,
-	Switch,
-} from "react-router-dom";
+import { BrowserRouter, Routes as ReactRoutes, Route } from "react-router-dom";
 
 import Home from "./Home";
 import Catalog from "./Catalog";
 import Blog from "./Blog";
 import BlogPost from "./BlogPost";
 import Layout from "./Layout";
-
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: Home,
-	},
-	{
-		path: "/catalog",
-		element: Catalog,
-	},
-	{
-		path: "/blog",
-		element: Blog,
-	},
-	{
-		path: "blogpost",
-		element: BlogPost,
-	},
-]);
-
-// function Routes() {
-// 	return <RouterProvider router={router} />;
-// }
 
 function Routes() {
 	return (
