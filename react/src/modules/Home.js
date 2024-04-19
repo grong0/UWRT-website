@@ -1,41 +1,41 @@
-import "../styles/Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
 	return (
 		<>
-			<div class="hero h-screen">
-				<div class="hero-content text-center">
-					<div class="max-w-md">
-						<h1 class="text-5xl font-bold">Welcome to the E-Store</h1>
-						<p class="py-6">
-							We sell everything from rocks to kitchen supplies and toiletry to
-							computer hardware. Anything you'll ever want, you'll find here, at
-							E-Store.
+			<div className="hero h-screen">
+				<div className="hero-content text-center">
+					<div className="max-w-md">
+						<h1 className="text-5xl font-bold">Welcome to the E-Store</h1>
+						<p className="py-6">
+							We sell primarily men's clothing and accessories!
 						</p>
 					</div>
 				</div>
 			</div>
-			<div class="hero w-full bg-base-100 h-[600px]">
-				<div class="hero-content text-center">
-					<div class="max-w-md">
-						<h2 class="text-3xl font-bold">Ready to shop?</h2>
-						<p class="py-6">Checkout our catalog to see our award winning selection!</p>
-						<a class="btn btn-primary" href="./catalog.html">
+			<div className="hero w-full bg-base-100 h-[600px]">
+				<div className="hero-content text-center">
+					<div className="max-w-md">
+						<h2 className="text-3xl font-bold">Ready to shop?</h2>
+						<p className="py-6">
+							Checkout our catalog to see our award winning selection!
+						</p>
+						<Link className="btn btn-primary" to="/catalog">
 							Catalog
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>
-			<div class="hero w-full bg-base-200 h-[600px]">
-				<div class="hero-content text-center">
-					<div class="max-w-md">
-						<h2 class="text-3xl font-bold">Want to get Updated?</h2>
-						<p class="py-6">
+			<div className="hero w-full bg-base-200 h-[600px]">
+				<div className="hero-content text-center">
+					<div className="max-w-md">
+						<h2 className="text-3xl font-bold">Want to get Updated?</h2>
+						<p className="py-6">
 							Checkout our amazing blog to stay updated on the latest and greatest!
 						</p>
-						<a class="btn btn-primary" href="./blog.html">
+						<Link className="btn btn-primary" to="/blog">
 							Blog
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

@@ -4,11 +4,9 @@ import Footer from "./Footer";
 
 function App() {
 	return (
-		<>
-			<Navbar />
+		<div className="bg-base-200">
 			<Router />
-			<Footer />
-		</>
+		</div>
 	);
 }
 

@@ -1,29 +1,29 @@
-import "../styles/Navbar.css";
-
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart, faGamepad, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
 	return (
-		<div class="navbar bg-base-100 absolute">
-			<div class="flex-1">
-				<Link class="btn btn-ghost text-xl" to="./">
+		<div className="navbar bg-base-100 absolute top-0">
+			<div className="flex-1">
+				<Link className="btn btn-ghost text-xl" to="/">
 					E-Store
 				</Link>
-				<Link class="btn btn-ghost text-l" to="./catalog">
+				<Link className="btn btn-ghost text-l" to="/catalog">
 					Catalog
 				</Link>
-				<Link class="btn btn-ghost text-l" to="./blog">
+				<Link className="btn btn-ghost text-l" to="/blog">
 					Blog
 				</Link>
 			</div>
-			<div class="flex-none">
-				<label class="text-xl swap swap-rotate btn btn-square btn-ghost">
-					<input type="checkbox" class="theme-controller" value="retro" />
-					<i class="fa-solid fa-gamepad swap-on fill-current"></i>
-					<i class="far fa-moon swap-off fill-current"></i>
+			<div className="flex-none">
+				<label className="text-xl swap swap-rotate btn btn-square btn-ghost">
+					<input type="checkbox" className="theme-controller" value="light" />
+					<FontAwesomeIcon icon={faSun} className="swap-on fill-current" />
+					<FontAwesomeIcon icon={faMoon} className="swap-off fill-current" />
 				</label>
-				<button class="btn btn-square btn-ghost text-xl">
-					<i class="fas fa-shopping-cart"></i>
+				<button className="btn btn-square btn-ghost text-xl">
+					<FontAwesomeIcon icon={faShoppingCart} />
 				</button>
 			</div>
 		</div>
