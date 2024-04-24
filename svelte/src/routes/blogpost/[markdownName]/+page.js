@@ -1,7 +1,5 @@
 export async function load({ fetch, params }) {
-	const urlParams = new URLSearchParams(window.location.search);
-	console.log(urlParams);
-	const response = fetch(`/lib/data/${urlParams}`);
+	const response = fetch(`/api/blogposts/${params.markdownName}`);
 	return {
 		post: {}
 	};

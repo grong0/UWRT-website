@@ -1,10 +1,13 @@
-import {getData} from "$lib/dataFunctions.js";
+// import Papa from "papaparse";
+import getItems from "$lib/api/items/items";
 
-export async function load({ params }) {
-	const data = getData();
-	// const response = await fetch("$lib/data/mens_shoes.csv");
-	// const responseText = response.text();
+export async function load({ fetch }) {
+	// const response = await fetch("/src/routes/api/items/mens_shoes.csv");
+	// const responseText = response.text('utf8');
 	// const data = Papa.parse(responseText);
+
+	const data = await getItems();
+	console.log(data);
 
 	var items = [];
 	var tags = [];
