@@ -1,16 +1,21 @@
 // import Papa from "papaparse";
-import getItems from "$lib/api/items/items";
+// import getItems from "/src/routes/api/items/mens_shoes.csv";
 
 export async function load({ fetch }) {
 	// const response = await fetch("/src/routes/api/items/mens_shoes.csv");
-	// const responseText = response.text('utf8');
-	// const data = Papa.parse(responseText);
+	// const responseText = response.text("utf8");
+	// const data = Papa.parse(responseText, {
+	// 	header: true,
+	// 	dynamicTyping: true,
+	// 	complete: (parseResult) => {
+	// 		console.log(parseResult);
+	// 		// handle errors etc.
+	// 		resolve();
+	// 	}
+	// });
 
-	const data = await getItems();
-	console.log(data);
-
-	var items = [];
-	var tags = [];
+	// var items = [];
+	// var tags = [];
 	// var count = 0;
 	// try {
 	// 	data.data.forEach((item) => {
@@ -29,10 +34,10 @@ export async function load({ fetch }) {
 	// 		count += 1;
 	// 	});
 	// } catch (error) {}
-	return {
-		post: {
-			items: items,
-			tags: tags
-		}
-	};
+	// return {
+	// 	post: {
+	// 		items: items,
+	// 		tags: tags
+	// 	}
+	// };
 }
