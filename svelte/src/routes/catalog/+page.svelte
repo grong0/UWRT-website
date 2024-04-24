@@ -55,7 +55,9 @@
 						count += 1;
 					});
 				} catch (error) {}
-				shownItems = items;
+				items = items;
+				tags = tags;
+				sortItems();
 				mounted = true;
 			});
 	});
@@ -91,7 +93,7 @@
 				<option selected value="all">All</option>
 				{#key tags}
 					{#each tags as tagObject}
-						<option value={tagObject}>fortnite</option>
+						<option value={tagObject}>{tagObject}</option>
 					{/each}
 				{/key}
 				<option value="eot">end of tags</option>
@@ -119,7 +121,7 @@
 				<div><span class="loading loading-spinner loading-lg"></span></div>
 			</div>
 		{:else}
-			<div class="grid grid-cols-4 gap-10">
+			<div class="grid grid-cols-5 gap-10">
 				{#each shownItems as item}
 					<CatalogItem
 						name={item.name}
