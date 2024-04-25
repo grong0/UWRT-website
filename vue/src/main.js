@@ -1,11 +1,19 @@
-import './assets/main.css'
+import "./assets/output.css";
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-const app = createApp(App)
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faSun, faMoon, faArrowRight, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-app.use(router)
+library.add(faSun);
+library.add(faMoon);
+library.add(faArrowRight);
+library.add(faShoppingCart);
 
-app.mount('#app')
+const app = createApp(App);
+
+app.use(router);
+
+app.mount("#app");

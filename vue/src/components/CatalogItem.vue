@@ -1,0 +1,30 @@
+<script setup>
+defineProps(["name", "price", "tags", "imageurl"]);
+</script>
+
+<template>
+	<div class="card w-full bg-base-100 shadow-xl">
+		<figure class="w-full aspect-square relative">
+			<img :src="imageurl" :alt="name" class="w-full h-full" />
+			<div class="w-min h-min absolute right-2 bottom-2 rounded-xl bg-base-200 p-4 shadow-xl">
+				<h2 class="font-bold text-primary text-xl">${{ price }}</h2>
+			</div>
+		</figure>
+		<div class="card-body">
+			<h2 class="card-title">{{ name }}</h2>
+			<div class="w-full flex flex-row gap-2 mb-5 flex-wrap h-auto">
+				<div
+					class="badge badge-accent select-none font-bold"
+					v-for="(tag, index) in tags"
+					v-bind:key="index"
+				>
+					{{ tag }}
+				</div>
+			</div>
+			<div class="card-actions justify-end mt-auto">
+				<button class="btn mr-auto">Add to Cart</button>
+				<button class="btn btn-primary">Buy Now</button>
+			</div>
+		</div>
+	</div>
+</template>
