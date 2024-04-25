@@ -19,7 +19,7 @@
 		<title>Catalog</title>
 	</head>
 	<body class="bg-base-200 min-h-screen">
-		<div hx-get="/navbar" hx-swap="outerHTML" hx-trigger="load"></div>
+		<div hx-get="/static/navbar.html" hx-swap="outerHTML" hx-trigger="load"></div>
 		<div class="flex flex-col w-full p-10 mt-16">
 			<div class="flex flex-row w-full gap-10">
 				<h1 class="text-5xl font-bold mb-10">Catalog</h1>
@@ -76,7 +76,7 @@
 				></div>
 			</div>
 		</div>
-		<div hx-get="/footer" hx-swap="outerHTML" hx-trigger="load"></div>
+		<div hx-get="/static/footer.html" hx-swap="outerHTML" hx-trigger="load"></div>
 	</body>
 	<script src="/static/htmx.min.js"></script>
 </html>

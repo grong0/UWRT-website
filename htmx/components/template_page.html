@@ -19,9 +19,9 @@
 		<title>{{title}}</title>
 	</head>
 	<body class="bg-base-200 min-h-screen">
-		<div hx-get="/navbar" hx-swap="outerHTML" hx-trigger="load"></div>
+		<div hx-get="/static/navbar.html" hx-swap="outerHTML" hx-trigger="load"></div>
 		{{content}}
-		<div hx-get="/footer" hx-swap="outerHTML" hx-trigger="load"></div>
+		<div hx-get="/static/footer.html" hx-swap="outerHTML" hx-trigger="load"></div>
 	</body>
 	<script src="/static/htmx.min.js"></script>
 </html>

@@ -2,9 +2,13 @@ import os
 import csv
 import uvicorn
 from markdown2 import Markdown
-from fastapi import FastAPI, Request, Response
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
+
+
+# Global Variabeles
+
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -27,6 +31,9 @@ blogs = [
         "sourcePath": "/templateBlog3.md",
     },
 ]
+
+
+# Helper Functions
 
 
 def generate_page(title: str, content: str) -> str:
@@ -64,6 +71,7 @@ def get_catalog_info() -> list[dict[str, str | list[str]]]:
     return items[1:-1], tags[1:-1]
 
 
+# Replacement for DB
 items, tags = get_catalog_info()
 
 
@@ -80,8 +88,20 @@ def filter_catalog_items(
         filtered_items.sort(
             key=lambda item: float(item["price"]), reverse=sort == "htl"
         )
-    print(filtered_items)
     return filtered_items
+
+
+def filter_blog_posts(query: str):
+    return list(
+        filter(
+            lambda blog_post: blog_post["title"].lower().find(query.lower()) != -1
+            or blog_post["description"].lower().find(query.lower()) != -1,
+            blogs,
+        )
+    )
+
+
+# Data -> Elements
 
 
 @app.get("/catalog/items", response_class=HTMLResponse)
@@ -110,16 +130,6 @@ def option_tags():
     return tags_content
 
 
-def filter_blog_posts(query: str):
-    return list(
-        filter(
-            lambda blog_post: blog_post["title"].lower().find(query.lower()) != -1
-            or blog_post["description"].lower().find(query.lower()) != -1,
-            blogs,
-        )
-    )
-
-
 @app.get("/blog/posts", response_class=HTMLResponse)
 async def render_blog_posts(query: str):
     filtered_blogs = filter_blog_posts(query)
@@ -134,32 +144,12 @@ async def render_blog_posts(query: str):
     return blogs_content
 
 
-# Pages and Components
+# Pages
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
 def root():
-    return generate_page("Home", get_component("home"))
-
-
-@app.get("/home", response_class=HTMLResponse)
-def home():
-    return get_component("home")
-
-
-@app.get("/catalog", response_class=HTMLResponse)
-def catalog():
-    return get_component("catalog")
-
-
-@app.get("/blog", response_class=HTMLResponse)
-def blog():
-    return get_component("blog")
-
-
-@app.get("/blogposts", response_class=HTMLResponse)
-def no_blog_post():
-    return get_component("noblogpost")
+    return RedirectResponse(url="/pages/index.html")
 
 
 @app.get("/blogposts/{index}", response_class=HTMLResponse)
@@ -167,21 +157,10 @@ def blogpost(index: int):
     markdowner = Markdown(extras=["tables", "fenced-code-blocks"])
     file = blogs[index]
     with open(f"./data/blogs{file['sourcePath']}") as f:
-        # return get_component("blogpost", ["content", markdowner.convert(f.read())])
         return generate_page(
             file["title"],
             get_component("blogpost", ["content", markdowner.convert(f.read())]),
         )
-
-
-@app.get("/navbar", response_class=HTMLResponse)
-def navbar():
-    return get_component("navbar")
-
-
-@app.get("/footer", response_class=HTMLResponse)
-def footer():
-    return get_component("footer")
 
 
 def serve():
