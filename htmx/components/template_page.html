@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Tailwind & DaisyUI -->
-        <link rel="stylesheet" href="/static/output.css" />
+		<!-- Tailwind & DaisyUI -->
+		<link rel="stylesheet" href="/static/output.css" />
 
 		<!-- FontAwesome -->
 		<link
@@ -16,11 +16,11 @@
 			referrerpolicy="no-referrer"
 		/>
 
-		<title>E-Store</title>
+		<title>{{title}}</title>
 	</head>
 	<body class="bg-base-200 min-h-screen">
 		<div hx-get="/navbar" hx-swap="outerHTML" hx-trigger="load"></div>
-		<div id="content" hx-get="/home" hx-trigger="load"></div>
+		{{content}}
 		<div hx-get="/footer" hx-swap="outerHTML" hx-trigger="load"></div>
 	</body>
 	<script src="/static/htmx.min.js"></script>

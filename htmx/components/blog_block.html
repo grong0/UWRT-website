@@ -1,0 +1,19 @@
+<div class="card card-side w-full bg-base-100 shadow-xl grid grid-cols-8">
+	<div class="card-body col-start-1 col-end-8">
+		<h2 class="card-title">{{title}}</h2>
+		<h3 className="text-l">{{description}}</h3>
+	</div>
+	<figure class="py-5 pr-5 col-start-8">
+		<!-- <a
+			class="btn btn-square w-full h-auto text-xl aspect-square"
+			hx-get="/blogposts/{{index}}"
+			hx-trigger="click"
+			hx-target="#content"
+		>
+			<i class="fa-solid fa-arrow-right"></i>
+		</a> -->
+		<a class="btn btn-square w-full h-auto text-xl aspect-square" href="/blogposts/{{index}}">
+			<i class="fa-solid fa-arrow-right"></i>
+		</a>
+	</figure>
+</div>
