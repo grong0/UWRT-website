@@ -170,8 +170,8 @@ def serve():
 def main():
     app.mount("/static", StaticFiles(directory="static"), name="static")
     app.mount("/", StaticFiles(directory="pages"), name="pages")
-    # serve() # production
-    os.system("uvicorn main:app --reload")
+    serve() # production
+    # os.system("uvicorn main:app --reload")
 
 
 if __name__ == "__main__":
